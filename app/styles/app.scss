@@ -7,7 +7,26 @@
 .main {
   margin-top: 20px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   h2 {
     color: gray;
   }
+}
+
+.list-container {
+  max-width: 740px;
+  margin: 100px;
+  display: flex;
+  flex-flow: row wrap;
+  section {
+    padding: 10px;
+    flex: 1;
+  }
+}
+
+.thumbnail {
+  width: 100px;
+  height: 100px;
 }

@@ -1,0 +1,9 @@
+<AppMain>
+  <h1>Online Photo Shops</h1>
+  <h2>Welcome to the OnlinePhotoShops!</h2>
+  <div class='list-container'>
+    {{#each @model as |item|}}
+      <Item @data={{item}} />
+    {{/each}}
+  </div>
+</AppMain>
