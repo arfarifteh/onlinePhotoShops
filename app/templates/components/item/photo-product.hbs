@@ -1,0 +1,50 @@
+<div class='card mb-3 detail-info'>
+  <div class='row g-0'>
+    <div class='col-md-4'>
+      <img
+        src={{@data.download_url}}
+        class='img-fluid rounded-start'
+        alt='{{@data.author}}'
+      />
+    </div>
+    <div class='col-md-8 group-info'>
+      <div class='card-body image-info'>
+        <h5 class='card-title'>Author: {{@data.author}}</h5>
+        <p class='card-text'>URL: {{@data.url}}</p>
+        <p class='card-text'><small class='text-muted'>Resolution:
+            {{@data.width}}
+            X
+            {{@data.height}}</small></p>
+      </div>
+      <div class='list-group image-resolution'>
+        <label class='list-group-item'>
+          <input class='form-check-input small' type='checkbox' value='small' />
+          Small
+        </label>
+        <label class='list-group-item'>
+          <input
+            class='form-check-input medium'
+            type='checkbox'
+            value='medium'
+            checked
+          />
+          Medium
+        </label>
+        <label class='list-group-item'>
+          <input class='form-check-input large' type='checkbox' value='large' />
+          Large
+        </label>
+        <label class='list-group-item'>
+          <input
+            class='form-check-input x-large'
+            type='checkbox'
+            value='xLarge'
+          />
+          X-Large
+        </label>
+      </div>
+      <button type="button" class="btn btn-success">Add to Cart</button>
+    </div>
+    <button type="button" class="btn btn-primary">Show my Cart</button>
+  </div>
+</div>
