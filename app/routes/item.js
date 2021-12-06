@@ -1,10 +1,10 @@
 import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
 export default class ItemRoute extends Route {
-  async model(params) {
-    let res = await fetch(`/api/items/${params.item_id}.json`);
-    let { payload } = await res.json();
+  @service store;
 
-    return payload;
+  async model(params) {
+    return this.store.findRecord('item', params.item_id);
   }
 }
