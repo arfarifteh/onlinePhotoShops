@@ -2,19 +2,19 @@
   <div class='row g-0'>
     <div class='col-md-4'>
       <img
-        src={{@data.download_url}}
+        src={{@photoItem.download_url}}
         class='img-fluid rounded-start'
-        alt='{{@data.author}}'
+        alt='{{@photoItem.author}}'
       />
     </div>
     <div class='col-md-8 group-info'>
       <div class='card-body image-info'>
-        <h5 class='card-title'>Author: {{@data.author}}</h5>
-        <p class='card-text'>URL: {{@data.url}}</p>
+        <h5 class='card-title'>Author: {{@photoItem.author}}</h5>
+        <p class='card-text'>URL: {{@photoItem.url}}</p>
         <p class='card-text'><small class='text-muted'>Resolution:
-            {{@data.width}}
+            {{@photoItem.width}}
             X
-            {{@data.height}}</small></p>
+            {{@photoItem.height}}</small></p>
       </div>
       <div class='list-group image-resolution'>
         <label class='list-group-item'>
