@@ -6,14 +6,14 @@ import { hbs } from 'ember-cli-htmlbars';
 module('Integration | Component | item', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders poper image', async function (assert) {
+  test('it renders proper image', async function (assert) {
     this.set('item', {
       download_url: 'https://something.ca',
     });
 
-    await render(hbs`<Item @data={{this.item}}/>`);
+    await render(hbs`<Item::PhotoProduct @photoItem={{this.item}}/>`);
 
-    assert.dom('img').hasClass('preview');
+    assert.dom(this.element.firstChild).hasClass('detail-info');
     assert.dom('img').hasProperty('src="https://something.ca"');
   });
 });

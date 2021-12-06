@@ -11,7 +11,7 @@ module('Integration | Component | item/photo-product', function (hooks) {
       author: 'myName',
       url: 'https://something.ca',
     });
-    await render(hbs`<Item::PhotoProduct @data={{this.item}}/>`);
+    await render(hbs`<Item::PhotoProduct @photoItem={{this.item}}/>`);
 
     assert
       .dom(this.element)
