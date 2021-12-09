@@ -1,7 +1,6 @@
 # online-photo-shops
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+The online photo store is a training repository for an Ember app
 
 ## Prerequisites
 

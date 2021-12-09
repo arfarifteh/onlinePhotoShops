@@ -32,6 +32,7 @@
 
 .list-pagination{
   flex: 1;
+  margin-top: 20px;
 }
 
 .thumbnail {
@@ -57,6 +58,12 @@
 
 .group-info > button {
   margin: 10px;
+}
+
+.photo-list{
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 900px;
 }
 
 .footer {
