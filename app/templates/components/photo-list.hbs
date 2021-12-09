@@ -1,6 +1,6 @@
-{{#each @photoList as |photo|}}
+{{#each @itemList as |photo|}}
   <section>
-    <LinkTo @route='item' @model={{photo}}>
+    <LinkTo @route='photo-info' @model={{photo}}>
       <img alt='author' class='preview thumbnail' src={{photo.download_url}} />
       <label>{{photo.author}}</label>
     </LinkTo>

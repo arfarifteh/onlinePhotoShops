@@ -2,16 +2,17 @@
   <h1>Online Photo Shops</h1>
   <h2>Welcome to the OnlinePhotoShops!</h2>
   <div class='list-container'>
-    <PhotoItem @photoList={{@model}} />
-
+    <PhotoList @itemList={{this.photoList}}/>
     <nav class='list-pagination' aria-label='Page navigation'>
       <ul class='pagination justify-content-center'>
         <li class='page-item disabled'>
           <a class='page-link' href='#'>Previous</a>
         </li>
-        <li class='page-item'><a class='page-link' href='#'>1</a></li>
-        <li class='page-item'><a class='page-link' href='#'>2</a></li>
-        <li class='page-item'><a class='page-link' href='#'>3</a></li>
+
+        {{#each (range 1 this.pageNumber) as |number|}}
+          <li class='page-item'><button type="button" class='page-link' {{on 'click' (fn this.paginate number)}}>{{number}}</button></li>
+        {{/each}}
+
         <li class='page-item'>
           <a class='page-link' href='#'>Next</a>
         </li>

@@ -1,10 +1,10 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 
-export default class MainRoute extends Route {
+export default class ApplicationRoute extends Route {
   @service storage;
 
-  async model() {
-    return this.storage.payload;
+  beforeModel() {
+    return this.storage.uploadData();
   }
 }
