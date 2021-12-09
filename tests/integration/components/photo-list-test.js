@@ -3,7 +3,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-module('Integration | Component | photo-item', function (hooks) {
+module('Integration | Component | photo-list', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders proper image', async function (assert) {
@@ -18,7 +18,7 @@ module('Integration | Component | photo-item', function (hooks) {
       },
     ]);
 
-    await render(hbs`<PhotoItem @photoList={{this.item}}/>`);
+    await render(hbs`<PhotoList @itemList={{this.item}}/>`);
 
     assert.equal(document.querySelectorAll('section').length, 2);
     assert.dom('img').hasProperty('src="https://something.ca"');
