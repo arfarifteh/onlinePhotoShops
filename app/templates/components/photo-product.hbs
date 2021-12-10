@@ -1,50 +1,61 @@
-<div class='card mb-3 detail-info'>
-  <div class='row g-0'>
-    <div class='col-md-4'>
+<div class="card mb-3 detail-info">
+  <div class="row g-0">
+    <div class="col-md-4">
       <img
         src={{@photoItem.download_url}}
-        class='img-fluid rounded-start'
-        alt='{{@photoItem.author}}'
+        class="img-fluid rounded-start"
+        alt="{{@photoItem.author}}"
       />
     </div>
-    <div class='col-md-8 group-info'>
-      <div class='card-body image-info'>
-        <h5 class='card-title'>Author: {{@photoItem.author}}</h5>
-        <p class='card-text'>URL: {{@photoItem.url}}</p>
-        <p class='card-text'><small class='text-muted'>Resolution:
+    <div class="col-md-8 group-info">
+      <div class="card-body image-info">
+        <h5 class="card-title">Author: {{@photoItem.author}}</h5>
+        <p class="card-text">URL: {{@photoItem.url}}</p>
+        <p class="card-text"><small class="text-muted">Resolution:
             {{@photoItem.width}}
             X
             {{@photoItem.height}}</small></p>
       </div>
-      <div class='list-group image-resolution'>
-        <label class='list-group-item'>
-          <input class='form-check-input small' type='checkbox' value='small' />
+      <div class="list-group image-resolution">
+        <label class="list-group-item">
+          <input class="form-check-input small" type="checkbox" value="small" />
           Small
         </label>
-        <label class='list-group-item'>
+        <label class="list-group-item">
           <input
-            class='form-check-input medium'
-            type='checkbox'
-            value='medium'
+            class="form-check-input medium"
+            type="checkbox"
+            value="medium"
             checked
           />
           Medium
         </label>
-        <label class='list-group-item'>
-          <input class='form-check-input large' type='checkbox' value='large' />
+        <label class="list-group-item">
+          <input class="form-check-input large" type="checkbox" value="large" />
           Large
         </label>
-        <label class='list-group-item'>
+        <label class="list-group-item">
           <input
-            class='form-check-input x-large'
-            type='checkbox'
-            value='xLarge'
+            class="form-check-input x-large"
+            type="checkbox"
+            value="xLarge"
           />
           X-Large
         </label>
       </div>
-      <button type="button" class="btn btn-success">Add to Cart <FaIcon @icon="cart-plus"/></button>
+      <button
+        type="button"
+        class="btn btn-success"
+        {{on "click" (fn this.submit @photoItem)}}
+      >Add to Cart <FaIcon @icon="cart-plus" /></button>
     </div>
-    <button type="button" class="btn btn-primary">Show my Cart <FaIcon @icon="shopping-cart"/></button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      {{on "click" (toggle "showCartFlag" this)}}
+    >{{if this.showCartFlag "Hide" "Show"}} my Cart <FaIcon @icon="shopping-cart" /></button>
   </div>
 </div>
+{{#if this.showCartFlag}}
+  <ShoppingCart @checkoutItems={{this.checkoutItems}}/>
+{{/if}}

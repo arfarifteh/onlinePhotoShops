@@ -1,0 +1,37 @@
+<div class="shopping-cart-container">
+  <table class="table">
+    <thead class="table-light">
+      <th>No.</th>
+      <th>Item Name</th>
+      <th>Image thumbnail</th>
+      <th>Item resolution</th>
+      <th>Price</th>
+      <th>Modify</th>
+    </thead>
+    <tbody>
+      {{#each @checkoutItems as |item index|}}
+        <tr>
+          <td>{{inc index}}</td>
+          <td>{{item.author}}</td>
+          <td><img
+              src={{item.download_url}}
+              alt={{item.author}}
+              class="thumbnail_small"
+            /></td>
+          <td>Medium(45 x 80)</td>
+          <td>100 CAD</td>
+          <td><button
+              type="button"
+              class="btn btn-warning"
+              {{on "click" (fn this.remove index)}}
+            >Remove</button></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  <button
+    type="button"
+    class="btn btn-success{{if (gt @checkoutItems.length 0) "" " disabled"}}"
+    {{on "click" (fn this.checkout @checkoutItems)}}
+  >Check out</button>
+</div>
