@@ -3,7 +3,7 @@ import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 
-module('Integration | Component | photo-info', function (hooks) {
+module('Integration | Component | content/photo-item', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders proper image', async function (assert) {

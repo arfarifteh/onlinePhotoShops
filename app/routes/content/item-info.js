@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 
-export default class PhotoInfoRoute extends Route {
+export default class ContentItemInfoRoute extends Route {
   @service store;
 
   async model(params) {
