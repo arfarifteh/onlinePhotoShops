@@ -9,17 +9,17 @@
       <th>Modify</th>
     </thead>
     <tbody>
-      {{#each @checkoutItems as |item index|}}
+      {{#each this.checkoutItems as |order index|}}
         <tr>
           <td>{{inc index}}</td>
-          <td>{{item.author}}</td>
+          <td>{{order.item.author}}</td>
           <td><img
-              src={{item.download_url}}
-              alt={{item.author}}
+              src={{order.item.download_url}}
+              alt={{order.item.author}}
               class="thumbnail_small"
             /></td>
-          <td>Medium(45 x 80)</td>
-          <td>100 CAD</td>
+          <td>{{order.resolution}}</td>
+          <td>{{order.price}}</td>
           <td><button
               type="button"
               class="btn btn-warning"
@@ -27,11 +27,19 @@
             >Remove</button></td>
         </tr>
       {{/each}}
+      <tr>
+        <th>Total</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>${{this.totalPrice}} CAD</th>
+        <th></th>
+      </tr>
     </tbody>
   </table>
   <button
     type="button"
-    class="btn btn-success{{if (gt @checkoutItems.length 0) "" " disabled"}}"
-    {{on "click" (fn this.checkout @checkoutItems)}}
+    class="btn btn-success{{if (gt this.checkoutItems.length 0) "" " disabled"}}"
+    {{on "click" (fn this.checkout this.checkoutItems)}}
   >Check out</button>
 </div>

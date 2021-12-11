@@ -11,7 +11,7 @@
       <div class="card-body image-info">
         <h5 class="card-title">Author: {{@photoItem.author}}</h5>
         <p class="card-text">URL: {{@photoItem.url}}</p>
-        <p class="card-text"><small class="text-muted">Resolution:
+        <p class="card-text"><small class="text-muted">Original Resolution:
             {{@photoItem.width}}
             X
             {{@photoItem.height}}</small></p>
@@ -19,7 +19,7 @@
       <div class="list-group image-resolution">
         <label class="list-group-item">
           <input class="form-check-input small" type="checkbox" value="small" />
-          Small
+          Small<span class="right">${{this.priceList.small}}</span>
         </label>
         <label class="list-group-item">
           <input
@@ -28,11 +28,11 @@
             value="medium"
             checked
           />
-          Medium
+          Medium<span class="right">${{this.priceList.medium}}</span>
         </label>
         <label class="list-group-item">
           <input class="form-check-input large" type="checkbox" value="large" />
-          Large
+          Large<span class="right">${{this.priceList.large}}</span>
         </label>
         <label class="list-group-item">
           <input
@@ -40,9 +40,10 @@
             type="checkbox"
             value="xLarge"
           />
-          X-Large
+          X-Large<span class="right">${{this.priceList.xLarge}}</span>
         </label>
       </div>
+
       <button
         type="button"
         class="btn btn-success"
@@ -57,5 +58,5 @@
   </div>
 </div>
 {{#if this.showCartFlag}}
-  <ShoppingCart @checkoutItems={{this.checkoutItems}}/>
+  <ShoppingCart/>
 {{/if}}

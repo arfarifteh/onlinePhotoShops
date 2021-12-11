@@ -16,7 +16,7 @@ module('Integration | Component | photo-product', function (hooks) {
     assert
       .dom(this.element)
       .hasText(
-        'Author: myName URL: https://something.ca Resolution: X Small Medium Large X-Large Add to Cart Show my Cart'
+        'Author: myName URL: https://something.ca Original Resolution: X Small$25 Medium$50 Large$75 X-Large$100 Add to Cart Show my Cart'
       );
   });
 });
