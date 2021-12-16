@@ -2,8 +2,9 @@
 {{#each @itemList as |photo|}}
   <section>
     <LinkTo @route='content.item-info' @model={{photo}}>
-      <img alt='author' class='preview thumbnail' src={{photo.download_url}} />
-      <label>{{photo.author}}</label>
+      <source media="(max-width: 1024px)" srcset={{photo.download_url}}>
+      <img class="preview thumbnail" alt={{photo.author}} src={{photo.download_url}}  loading="lazy">
+    <label>{{photo.author}}</label>
     </LinkTo>
   </section>
 {{/each}}
